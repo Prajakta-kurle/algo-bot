@@ -1,7 +1,5 @@
 from flask import Flask, request
-import threading
 from strategy import create_trade
-from websocket_client import start_ws
 from config import MAX_TRADES
 
 app = Flask(__name__)
@@ -27,10 +25,3 @@ def webhook():
     trade_count += 1
 
     return {"status": "trade placed"}
-
-if __name__ == "__main__":
-    threading.Thread(target=start_ws).start()
-
-    import os
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
