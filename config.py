@@ -1,0 +1,12 @@
+INITIAL_CAPITAL = 100000
+current_capital = INITIAL_CAPITAL
+
+RISK_PERCENT = 1
+SL_POINTS = 20
+RR_RATIO = 2
+MAX_TRADES = 3
+
+symbol_map = {
+    "NSE:NIFTY": "13",
+    "NSE:BANKNIFTY": "25"
+}
